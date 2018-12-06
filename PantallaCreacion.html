@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<link rel="stylesheet" type="text/css" href="EstiloContra.css">
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="contras.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+
+
+</head>
+<body>
+
+	<center>
+	<h1 class="informacion">Ingrese los siguientes datos relacionados a la aplicacion</h1>
+	<input class="DatosNuevos1" type="text" placeholder="Nombre de la plataforma" width="50px" id="NombreP"><br><br>
+	<input class="DatosNuevos" type="text" placeholder="Liga de la plataforma" width="50px" id="LigaP"><br><br>
+	<input class="DatosNuevos" type="text" placeholder="Nombre de usuario" width="50px" id="NombreU"><br><br>
+	<input class="DatosNuevos" type="text" placeholder="Correo electronico" width="50px" id="CorreoU"><br><br>
+	<input class="DatosNuevos" type="text" placeholder="Contrasena" width="50px" id="ContrasenaU"><br><br>
+		<button class="AgregarDatos" onclick="agregarRegresar()" id="boton-guardar">Guardar y Salir</button>
+  </center>
+
+<script>
+	$(document).ready(function(){    
+    $('#boton-guardar').click(function(){        
+        /*Captura de datos escrito en los inputs*/        
+        var nombrePlataforma = document.getElementById("NombreP").value;
+        var LigaPlataforma = document.getElementById("LigaP").value;
+        var NombreUsuario = document.getElementById("NombreU").value;
+        var CorreoElectronico = document.getElementById("CorreoU").value;
+        var ContrasenaAplicacion = document.getElementById("ContrasenaU").value;
+        /*Guardando los datos en el LocalStorage*/
+        localStorage.setItem("Nombre de la Plataforma", nombrePlataforma);
+        localStorage.setItem("Liga de la Plataforma", LigaPlataforma);
+        localStorage.setItem("Nommbre de usuario", NombreUsuario);
+        localStorage.setItem("CorreoElectronico", CorreoElectronico);
+        localStorage.setItem("Contrasena", ContrasenaAplicacion);
+        /*Limpiando los campos o inputs*/
+        document.getElementById("NombreP").value = "";
+        document.getElementById("LigaP").value = "";
+        document.getElementById("NombreU").value = "";
+        document.getElementById("CorreoU").value = "";
+        document.getElementById("ContrasenaU").value = "";
+
+        	window.location.assign('PantallaCuentas.html');
+
+    });   
+});
+</script>
+
+</body>
+</html>

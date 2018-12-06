@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="EstiloContra.css">
+	<meta name="viewport" content="width=device-width">
+	<script type="text/javascript" src="contras.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+</head>
+<body class="PantallaInfo">
+
+	<div class="pantainfo">
+		<h1 class="informacion">Datos de la cuenta</h1><br><br><br>
+	<h2 class="tipoDato">Nombre de la plataforma</h2> 
+	<label class="DatosNuevos3" type="text" id="plataformaNombre"></label><br><br>
+	<h2 class="tipoDato">Liga de la plataforma</h2>
+	<label class="DatosNuevos3" type="text" id="plataformaLiga"></label><br><br>
+	<h2 class="tipoDato">Nombre de usuaio</h2>
+	<label class="DatosNuevos3" type="text" id="usuaioNombre"></label><br><br>
+	<h2 class="tipoDato">Correo electronico</h2>
+	<label class="DatosNuevos3" type="text" id="usuaioCorreo"></label><br><br>
+	<h2 class="tipoDato">Contrasena</h2>		
+	<label class="DatosNuevos3" type="text" id="usuaioContrasena"></label><br><br>
+	
+<div>	
+		<button class="boton-agregar" id="boton-cargar">Cargar elementos</button>
+	</div>	
+	<div>	
+		<button class="boton-eliminar" onclick="editar()">editar</button>
+	</div>
+
+	<button class="RegresarInformacion" onclick="agregarRegresar()">Regresar</button>
+
+	<script>
+		$(document).ready(function(){    
+    $('#boton-cargar').click(function(){                       
+        /*Obtener datos almacenados*/
+        var NombrePla = localStorage.getItem("Nombre de la Plataforma");
+        var LigaPla = localStorage.getItem("Liga de la Plataforma");
+        var NombreUsua = localStorage.getItem("Nommbre de usuario");
+        var CorreoUsua = localStorage.getItem("CorreoElectronico");
+        var ContraUsua = localStorage.getItem("Contrasena");
+        /*Mostrar datos almacenados*/      
+        document.getElementById("plataformaNombre").innerHTML = NombrePla;
+        document.getElementById("plataformaLiga").innerHTML = LigaPla;
+        document.getElementById("usuaioNombre").innerHTML = NombreUsua;
+        document.getElementById("usuaioCorreo").innerHTML = CorreoUsua;
+        document.getElementById("usuaioContrasena").innerHTML = ContraUsua; 
+    });   
+});
+	</script>
+
+	</div>
+
+	</body>
+</html>
